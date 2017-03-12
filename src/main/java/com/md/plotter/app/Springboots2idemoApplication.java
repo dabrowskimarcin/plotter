@@ -1,4 +1,4 @@
-package com.jmd.plotter.app;
+package com.md.plotter.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

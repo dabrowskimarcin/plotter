@@ -1,4 +1,4 @@
-package com.jmd.plotter.app.controller;
+package com.md.plotter.app.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

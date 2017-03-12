@@ -1,4 +1,4 @@
-package com.jmd.plotter.app.model;
+package com.md.plotter.app.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 

@@ -22,4 +22,5 @@ public class Plot extends AbstractBaseEntity {
 
     @ManyToOne(cascade = CascadeType.ALL)
     private City city;
+
 }

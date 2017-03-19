@@ -1,37 +1,22 @@
 package com.md.plotter.app.controller;
 
-import com.md.plotter.app.harvester.DataHarvester;
-import com.md.plotter.app.model.Plot;
-import com.md.plotter.app.repository.PlotRepository;
+import com.md.plotter.app.cron.PlotHarvestScheduler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
-import java.util.Collection;
-import java.util.List;
 
 @RestController
 @RequestMapping("/plots")
 public class PlotsController {
 
     @Autowired
-    private PlotRepository plotRepository;
-
-    @Autowired
-    private DataHarvester harvester;
+    private PlotHarvestScheduler scheduler;
 
     @RequestMapping(method = RequestMethod.GET)
-    public Collection<Plot> plots() throws IOException {
-        final List<Plot> harvest = harvester.harvest();
-        //TODO: add cities to plot list
-        plotRepository.save(harvest);
-        return harvest;
-    }
-
-    @RequestMapping(value = "/count", method = RequestMethod.GET)
-    public long count() {
-        return plotRepository.count();
+    public void plots() throws IOException {
+        scheduler.schedule();
     }
 }

@@ -1,4 +1,4 @@
-package com.md.plotter.app.harvester;
+package com.md.plotter.app.converter;
 
 import com.md.plotter.app.model.Plot;
 import org.joda.time.DateTime;

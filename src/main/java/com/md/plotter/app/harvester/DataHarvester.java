@@ -1,5 +1,6 @@
 package com.md.plotter.app.harvester;
 
+import com.md.plotter.app.converter.PlotDataConverter;
 import com.md.plotter.app.model.Plot;
 import org.jsoup.nodes.Document;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,10 +50,9 @@ public class DataHarvester {
             if (plots.size() >= offersNumber) {
                 break;
             }
-            System.out.println(counter + " " + plots.size());
+            System.out.println(counter);
             plots.addAll(converter.parse(connect(prepareURL(counter.incrementAndGet())).get()));
         }
-
         return plots;
     }
 
